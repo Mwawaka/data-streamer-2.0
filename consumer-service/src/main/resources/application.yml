@@ -1,0 +1,12 @@
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: "localhost:9092"
+      auto-offset-reset: earliest
+      properties:
+        retention.ms: 60000
+
+
+---
+server:
+  port: "8083"

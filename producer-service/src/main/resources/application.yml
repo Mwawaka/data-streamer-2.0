@@ -1,0 +1,13 @@
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: "localhost:9092"
+      properties:
+        retention.ms: 60000
+---
+server:
+  port: 8082
+
+---
+
+url: "https://api.openweathermap.org/data/2.5/weather?q=Juja,ke&APPID=9a848d03f9a625b2df4e452191dde097"
