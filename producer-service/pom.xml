@@ -11,8 +11,8 @@
     <groupId>com.mwawaka</groupId>
     <artifactId>producer-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>air-quality-streamer</name>
-    <description>air-quality-streamer</description>
+    <name>producer-service</name>
+    <description>producer-service</description>
     <properties>
         <java.version>19</java.version>
     </properties>
