@@ -19,7 +19,7 @@ public class WeatherData {
     @JsonProperty("visibility")
     private int visibility;
     private Wind wind;
-//    private Rain rain;
+    private Rain rain;
     private Clouds clouds;
     @JsonProperty("dt")
     private long timestamp;

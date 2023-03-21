@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <template encoding-version="1.3">
-    <description>Flow programming
-
-</description>
+    <description>V.2.0</description>
     <groupId>f44108bf-0186-1000-4feb-2d0b6c933a9b</groupId>
-    <name>Commercial Programming</name>
+    <name>Data Streamer</name>
     <snippet>
         <connections>
             <id>2efbf06d-db07-3426-0000-000000000000</id>
@@ -405,7 +403,7 @@
 ,timezone
 ,weather.0.description
 ,weather.0.main
-,wind.speed</value>
+,wind.speed,rain</value>
                     </entry>
                     <entry>
                         <key>attributes-to-json-regex</key>
@@ -526,7 +524,7 @@
                     </entry>
                     <entry>
                         <key>jolt-spec</key>
-                        <value>[  {    "operation": "shift",    "spec": {      "main.humidity": "humidity",      "timezone": "timezone",      "cloudCoverage": "cloud_coverage",      "weather.0.main": "weather",      "weather.0.description": "weather_description",      "main.temp_min": "minimum_temperature",      "coord.lat": "latitude",      "sys.country": "country",      "wind.speed": "wind_speed",      "main.pressure": "pressure",      "main.sea_level": "sea_level",      "main.temp_max": "maximum_temperature",      "name": "city_name",      "id": "city_id",      "main.temp": "temperature",      "coord.lon": "longitude"    }  }]
+                        <value>[  {    "operation": "shift",    "spec": {      "main.humidity": "humidity",      "timezone": "timezone",      "cloudCoverage": "cloud_coverage",      "weather.0.main": "weather",      "weather.0.description": "weather_description",      "main.temp_min": "minimum_temperature",      "coord.lat": "latitude",      "sys.country": "country",      "wind.speed": "wind_speed",      "main.pressure": "pressure",      "main.sea_level": "sea_level",      "main.temp_max": "maximum_temperature",      "name": "city_name",      "id": "city_id",      "main.temp": "temperature",      "coord.lon": "longitude"  , "rain" : "rain_volume"   }  }]
 </value>
                     </entry>
                     <entry>
@@ -1136,7 +1134,7 @@
                 <name>success</name>
                 <retry>false</retry>
             </relationships>
-            <state>RUNNING</state>
+            <state>STOPPED</state>
             <style/>
             <type>org.apache.nifi.processors.kafka.pubsub.ConsumeKafka_2_6</type>
         </processors>
@@ -1475,7 +1473,7 @@
                 <name>success</name>
                 <retry>false</retry>
             </relationships>
-            <state>RUNNING</state>
+            <state>STOPPED</state>
             <style/>
             <type>org.apache.nifi.processors.kafka.pubsub.PublishKafka_2_6</type>
         </processors>
@@ -1589,6 +1587,12 @@
                         </value>
                     </entry>
                     <entry>
+                        <key>rain</key>
+                        <value>
+                            <name>rain</name>
+                        </value>
+                    </entry>
+                    <entry>
                         <key>sys.country</key>
                         <value>
                             <name>sys.country</name>
@@ -1683,6 +1687,10 @@
                     <entry>
                         <key>name</key>
                         <value>$.name</value>
+                    </entry>
+                    <entry>
+                        <key>rain</key>
+                        <value>$.rain.1h</value>
                     </entry>
                     <entry>
                         <key>sys.country</key>
@@ -2002,5 +2010,5 @@
             <type>org.apache.nifi.processors.attributes.UpdateAttribute</type>
         </processors>
     </snippet>
-    <timestamp>03/21/2023 19:04:38 UTC</timestamp>
+    <timestamp>03/21/2023 19:35:15 UTC</timestamp>
 </template>
