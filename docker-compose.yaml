@@ -33,7 +33,7 @@ services:
     networks:
       - connection
 
-  nifka:
+  nifi:
     image: apache/nifi:latest
     container_name: nifka
     depends_on:
