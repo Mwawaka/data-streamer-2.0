@@ -34,3 +34,6 @@ build/
 docs.txt
 script
 .mvn/wrapper
+
+pgdata
+nifi-flow/nifi_data
