@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class KafkaListeners {
 
-    @KafkaListener(topics = "Weather-Cast-Data", groupId = "test")
+    @KafkaListener(topics = "Weather-Forecast", groupId = "test")
     void listener(String data) {
         System.out.println("Listener Received : " + data);
     }
