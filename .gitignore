@@ -36,4 +36,4 @@ script
 .mvn/wrapper
 
 pgdata
-nifi-flow/nifi_data
+/nifi-flow/nifi_data/
