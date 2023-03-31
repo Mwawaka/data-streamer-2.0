@@ -10,7 +10,7 @@ public class KafkaTopicConfig {
 
     @Bean
     public KafkaAdmin.NewTopics rawDataTopic() {
-        return new KafkaAdmin.NewTopics(TopicBuilder.name("Weather-Cast-Data").build(), TopicBuilder.name("Air-Quality").build());
+        return new KafkaAdmin.NewTopics(TopicBuilder.name("Weather-Cast-Data").build(), TopicBuilder.name("Weather-Forecast").build());
     }
 
 

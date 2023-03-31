@@ -23,6 +23,8 @@ public class WeatherData {
     private Clouds clouds;
     @JsonProperty("dt")
     private long timestamp;
+    private String formattedTimestamp;
+
     private Sys sys;
     @JsonProperty("timezone")
     private long timezone;
