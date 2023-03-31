@@ -27,7 +27,6 @@ public class KafkaProducer implements Callback {
             rain.setVolume(0);
             weatherData.setRain(rain);
         }
-        System.out.println(weatherData.getRain());
 
         kafkaTemplate.send(topic, weatherData);
     }
