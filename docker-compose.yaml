@@ -50,7 +50,7 @@ services:
      - connection
 
   broker-service:
-    image: broker:latest
+    image: mwawaka/broker:latest
     container_name: broker-s
     depends_on:
       - kafka
@@ -60,7 +60,7 @@ services:
       - connection
 
   producer-service:
-    image: producer:latest
+    image: mwawaka/producer:latest
     container_name: producer
     depends_on:
       - kafka
@@ -71,7 +71,7 @@ services:
       - connection
 
   consumer-service:
-    image: consumer:latest
+    image: mwawaka/consumer:latest
     container_name: consumer
     depends_on:
       - kafka
