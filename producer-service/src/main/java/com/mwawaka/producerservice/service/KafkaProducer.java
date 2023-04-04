@@ -19,6 +19,7 @@ public class KafkaProducer implements Callback {
     public void sendMessage(String topic, WeatherData weatherData) {
 
         String formattedTimestamp = DateTimeUtils.formatTimestamp(weatherData.getTimestamp());
+
         weatherData.setFormattedTimestamp(formattedTimestamp);
 
         Rain rain = weatherData.getRain();
@@ -38,6 +39,7 @@ public class KafkaProducer implements Callback {
                     ", partition: " + result.partition() +
                     ", offset: " + result.offset());
         }
+        assert e != null;
         System.out.println("Error Message: " + e.getMessage());
 
     }

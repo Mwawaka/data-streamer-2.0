@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 
 public class DateTimeUtils {
     private static final DateTimeFormatter FORMATTER =
-            DateTimeFormatter.ofPattern("MMMM d, yyyy, HH:mm:ss");
+            DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
 
     public static String formatTimestamp(long timestamp) {
         LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.ofEpochSecond(timestamp), ZoneOffset.UTC);
