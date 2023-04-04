@@ -60,3 +60,5 @@ CREATE TRIGGER weather_data_max_temp_celsius_trigger
 EXECUTE FUNCTION update_max_temp_celsius();
 
 -----------------------------------------------------------------------------------------
+ALTER TABLE weather_data
+    ADD COLUMN unix_time TIMESTAMP;
