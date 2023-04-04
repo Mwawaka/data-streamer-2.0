@@ -20,6 +20,9 @@ public class KafkaProducerConfig {
     @Value("${spring.kafka.producer.bootstrap-servers}")
     private String bootStrapServers;
 
+    @Value("${spring.kafka.producer.properties.connections.max.idle.ms}")
+    private int maxIdleTime;
+
     public Map<String, Object> producerConfig() {
 
         Map<String, Object> props = new HashMap<>();
@@ -27,6 +30,7 @@ public class KafkaProducerConfig {
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootStrapServers);
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+        props.put(ProducerConfig.CONNECTIONS_MAX_IDLE_MS_CONFIG, maxIdleTime);
         return props;
     }
 

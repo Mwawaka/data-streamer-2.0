@@ -4,6 +4,8 @@ spring:
       bootstrap-servers: "kafka:29092"
       properties:
         retention.ms: 60000
+        connections.max.idle.ms: 900000
+
 ---
 server:
   port: 8082

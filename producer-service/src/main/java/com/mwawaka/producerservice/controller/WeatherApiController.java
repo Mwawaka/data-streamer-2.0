@@ -24,7 +24,7 @@ public class WeatherApiController {
     }
     @GetMapping("/pub")
 //    @Scheduled(fixedDelay = 5000)
-    @Scheduled(fixedRate = 3600000)
+    @Scheduled(fixedRate = 840000 )
     public HttpStatus publish() throws JsonProcessingException {
         return weatherApiService.publish();
     }
